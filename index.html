@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        header img {
+            height: 350px;
+            width: 250px;
+        }
+        .search-bar {
+            margin: 20px;
+            text-align: center;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .tab {
+            background-color: #f4f4f4;
+            padding: 15px;
+            margin: 0 10px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+        }
+        .tab:hover {
+            background-color: #ddd;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            margin: 10px 0;
+        }
+        .active {
+            display: block;
+        }
+        #goButton {
+            display: none;
+            margin-top: 10px;
+        }
+        .book-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .book-button:hover {
+            background-color: #218838;
+        }
+
+        /* Links in top-right corner */
+        .top-right-links {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .top-right-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .top-right-links a:hover {
+            color: blue;
+        }
+    </style>
+</head>
+<body style="background-color: gray">
+    
+<header>
+    <h1>Welcome to ATHIRA Hotel</h1>
+    <p>Book your room now!</p>
+    <img src="logo.png" alt="Hotel Athira">
+</header>
+
+<!-- Top-right links -->
+<div class="top-right-links">
+    <a href="faq.html">FAQ. |</a>
+    <a href="contact.html">Contact Us. |</a>
+    <a href="blog.html">Blog.</a>
+</div>
+
+<div class="search-bar">
+    <label for="searchInput">Enter a room number (102, 103, 104): </label>
+    <input type="number" id="searchInput" placeholder="Enter Room Number" oninput="toggleButton()">
+    <button id="goButton" onclick="searchTab()">Go</button>
+</div>
+
+<div id="content104" class="tab-content">
+    <h3>Room 104 - Deluxe Suite</h3>
+    <p>This is our deluxe suite perfect for a 1-week stay...</p>
+    <h1><b>AVAILABLE. BOOK NOW!!!</b></h1>
+
+    <img src="104.png" alt="img1" style="height: 450px; width: 350px;">
+    <img src="104(2).png" alt="img2" style="height: 450px; width: 350px;">
+    <button class="book-button" onclick="window.location.href='booking.html'">Book Now</button>
+</div>
+
+<div id="content103" class="tab-content">
+    <h3>Room 103 - Standard Room</h3>
+    <p>This is our standard room, perfect for a short stay.</p>
+    <h1><b>BOOKED! Sorry for the inconvenience...</b></h1>
+    <img src="booked.jpeg" alt="BOOKED" style="height: 450px; width: 550px;">
+    <h2>Booked by</h2>
+    <img src="stayer2.png" alt="img1" style="height: 450px; width: 350px;">
+</div>
+
+<div id="content102" class="tab-content">
+    <h3>Room 102 - Family Suite</h3>
+    <p>This is a family suite with enough space for everyone.</p>
+    <h1><b>BOOKED! Sorry for the inconvenience...</b></h1>
+    <img src="booked.jpeg" alt="BOOKED" style="height: 450px; width: 550px;">
+    <h2>Booked by</h2>
+    <img src="stayer3.png" alt="img1" style="height: 450px; width: 350px;">
+</div>
+
+<script>
+    function showTab(tabNumber) {
+        document.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.remove('active');
+        });
+
+        document.getElementById('content' + tabNumber).classList.add('active');
+    }
+
+    function searchTab() {
+        const searchValue = document.getElementById('searchInput').value;
+
+        if (searchValue === '102' || searchValue === '103' || searchValue === '104') {
+            showTab(searchValue);
+        } else {
+            alert('Please enter a valid room number (102, 103, or 104).');
+        }
+    }
+
+    function toggleButton() {
+        const searchInput = document.getElementById('searchInput').value;
+        const goButton = document.getElementById('goButton');
+        
+        // Show button if a valid number is typed
+        if (searchInput === '102' || searchInput === '103' || searchInput === '104') {
+            goButton.style.display = 'inline-block';
+        } else {
+            goButton.style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>

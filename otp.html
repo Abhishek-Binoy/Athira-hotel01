@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTP Verification</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+    h2 {
+      text-align: center;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .otp-container {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Email Verification</h2>
+  <input type="email" id="email" placeholder="Enter your email" required>
+  <button id="sendOtpButton">Send OTP</button>
+
+  <div class="otp-container" id="otpContainer">
+    <input type="text" id="otp" placeholder="Enter OTP" required>
+    <button id="submitOtpButton">Submit OTP</button>
+  </div>
+</div>
+
+<script>
+  document.getElementById('sendOtpButton').addEventListener('click', function() {
+    const email = document.getElementById('email').value;
+    if (email === "") {
+      alert("Please enter a valid email address.");
+    } else {
+      // In a real scenario, you would send the OTP to the provided email via backend
+      alert(`OTP sent to ${email}`);
+
+      // Show the OTP input section after sending OTP
+      document.getElementById('otpContainer').style.display = 'block';
+    }
+  });
+
+  document.getElementById('submitOtpButton').addEventListener('click', function() {
+    const otp = document.getElementById('otp').value;
+    if (otp === "") {
+      alert("Please enter the OTP.");
+    } else {
+      // In a real scenario, you'd verify the OTP here via backend
+      alert("OTP verified! Redirecting...");
+
+      // Redirect to the Thank You page
+      window.location.href = "thankyou.html";
+    }
+  });
+</script>
+
+</body>
+</html>

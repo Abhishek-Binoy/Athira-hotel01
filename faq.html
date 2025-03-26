@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Hotel Athira</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .faq-container {
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .faq-title {
+            text-align: center;
+            font-size: 28px;
+            color: #28a745;
+            margin-bottom: 30px;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        .faq-item h3 {
+            font-size: 22px;
+            color: #333;
+            cursor: pointer;
+            background-color: #f7f7f7;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .faq-item p {
+            font-size: 16px;
+            color: #555;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: none;
+        }
+        .faq-item.active p {
+            display: block;
+        }
+        .faq-item:hover h3 {
+            background-color: #28a745;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Hotel Athira</h1>
+        <p>Frequently Asked Questions (FAQ)</p>
+    </header>
+
+    <div class="faq-container">
+        <div class="faq-title">Frequently Asked Questions</div>
+
+        <div class="faq-item">
+            <h3>1. What are the check-in and check-out times?</h3>
+            <p>Check-in is from 2:00 PM onwards, and check-out is by 11:00 AM.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>2. Does the hotel offer free Wi-Fi?</h3>
+            <p>Yes, we offer complimentary Wi-Fi in all rooms and common areas of the hotel.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>3. Are pets allowed at Hotel Athira?</h3>
+            <p>Unfortunately, we do not allow pets at Hotel Athira. However, service animals are welcome.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>4. Can I request an early check-in or late check-out?</h3>
+            <p>Yes, you can request an early check-in or late check-out, subject to availability. Please contact the front desk ahead of time to make arrangements.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>5. Is there parking available at the hotel?</h3>
+            <p>Yes, we have free parking available for guests at the hotel, based on availability.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>6. Does the hotel offer room service?</h3>
+            <p>Yes, room service is available from 7:00 AM to 10:00 PM every day. You can order food and beverages to your room by contacting the front desk.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>7. Are there any nearby attractions to visit?</h3>
+            <p>Yes, Hotel Athira is located near several popular attractions, including parks, shopping malls, and historical landmarks. Please check with the front desk for recommendations and directions.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>8. How can I make a reservation?</h3>
+            <p>You can make a reservation directly on our website or by calling our reservations team. Alternatively, you can also book through third-party websites like Booking.com or Expedia.</p>
+        </div>
+
+    </div>
+
+    <script>
+        // JavaScript to toggle the FAQ answers
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            item.querySelector('h3').addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
